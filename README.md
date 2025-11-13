@@ -1,132 +1,95 @@
-
-# Avaliação Final — Algoritmos Avançados em Python (UNIPLAN)
-
-Bem-vindo(a)! Este repositório contém o projeto da **Avaliação Final** da disciplina **Algoritmos Avançados em Python** (Curso: **Análise e Desenvolvimento de Sistemas**, 1º e 2º semestres).  
-**Professor:** Breno Abreu — **Instituição:** UNIPLAN.
-
-> 🧭 **Contexto realista:** esta atividade simula o **onboarding de um desenvolvedor(a) júnior** em um projeto de software. Você deverá entender o código-base, implementar funções pontuais e contribuir via **GitHub Pull Request**, deixando registro individual da sua participação.
-
----
-
-## 📦 Estrutura do projeto
-
-```
-prova_intro_arvores_grafos/
-  arvore/
-    app_tree.py         # UI Tkinter travada (não altere)
-    tree_logic.py       # implemente a função navigate_tree()
-  grafo/
-    app_graph.py        # UI Tkinter travada (não altere)
-    graph_logic.py      # implemente a função connected()
-  run_tree.bat          # atalho Windows
-  run_graph.bat         # atalho Windows
-  README.md             # instruções da prova (estudante)
-```
-
-> **Você deve editar apenas:** `arvore/tree_logic.py` e `grafo/graph_logic.py`.
+# 🧮 Avaliação Final — Algoritmos Avançados em Python
+**Curso:** Análise e Desenvolvimento de Sistemas – UNIPLAN  
+**Professor:** Breno Abreu  
+**Semestres:** 1º e 2º  
+**Linguagem:** Python  
+**Tema central:** Estruturas de dados — Árvores Binárias e Grafos  
+**Período de entrega:** Semana de Avaliações Finais  
 
 ---
 
-## ⚙️ Requisitos
+## 🎯 Contexto do Projeto
+Você foi recentemente **contratado como desenvolvedor júnior** em uma startup que utiliza Python e algoritmos de IA. Seu primeiro desafio consiste em **compreender e corrigir o funcionamento de duas estruturas de dados fundamentais** — **uma árvore binária** e **um grafo** — já parcialmente implementadas pela equipe sênior.
 
-- **Python 3.10+** (Windows, macOS ou Linux).  
-- Não use bibliotecas externas (apenas biblioteca padrão).  
-- Tkinter já vem com Python no Windows.
-
----
-
-## ▶️ Como executar localmente (Windows)
-
-1. Baixe/clone o repositório para sua máquina.  
-2. Dê um duplo clique em **`run_tree.bat`** e **`run_graph.bat`** (ou use o terminal: `python arvore/app_tree.py` e `python grafo/app_graph.py`).  
-3. Valide seus resultados antes de abrir o PR.
+Seu papel é **analisar o código**, compreender a lógica e **corrigir a entrada de dados** sem alterar a lógica central de visualização já implementada em Tkinter. O foco está em **entender o raciocínio por trás das estruturas**, e não apenas em fazê-las funcionar.
 
 ---
 
-## 🎯 O que implementar
-
-### 1) Árvore de Decisão (arquivo `arvore/tree_logic.py`)
-- Função **`navigate_tree(node, answers)`**: navega na árvore com respostas `["sim", "não", ...]` até chegar a uma folha e retornar a decisão.  
-- Trate respostas inválidas com `ValueError` e mensagens claras.
-
-### 2) Conectividade em Grafo (arquivo `grafo/graph_logic.py`)
-- Função **`connected(graph, a, b)`**: retorne `True` se houver qualquer caminho entre `a` e `b` (grafo não direcionado).  
-- **Use apenas listas** (sem `deque`). BFS com `list.pop(0)` é suficiente para este exercício.
+## ⚙️ Objetivos da Atividade
+- Reforçar o domínio sobre **estruturas de dados** (árvores e grafos).  
+- Compreender como elas são aplicadas em **situações reais de desenvolvimento**.  
+- Desenvolver **raciocínio lógico e depuração de código**.  
+- Praticar o **fluxo profissional de versionamento e colaboração via GitHub**.  
+- Promover o uso **ético e explicativo** da Inteligência Artificial como ferramenta de apoio.
 
 ---
 
-## 🤖 Uso de Inteligência Artificial (autorizado)
+## 💡 Uso de Inteligência Artificial
+O uso de ferramentas de IA (como ChatGPT, Copilot, Gemini etc.) é **autorizado e encorajado**, desde que:
+- o estudante **explique claramente** no relatório (corpo do PR) **o que pediu** e **como utilizou a resposta**;  
+- demonstre **compreensão do raciocínio**, não apenas o resultado final.  
 
-O uso de IA (ChatGPT, Copilot, etc.) é **permitido e incentivado** como apoio ao aprendizado. **Explique** no seu PR:
-- Onde e como a IA ajudou.
-- O que você entendeu de fato (não apenas o código final).
-
-### Prompts sugeridos (foco no raciocínio)
-- “Explique passo a passo como um grafo armazena conexões entre nós em Python.”  
-- “Qual a diferença prática entre lista e matriz de adjacência?”  
-- “Como a recursão funciona em percorrimentos de árvores binárias?”  
-- “Analise este trecho e explique linha por linha.”  
-- “Mostre duas formas de representar um grafo apenas com listas e discuta legibilidade.”
-
----
-
-## 🔀 Fluxo de trabalho (Git & Pull Request)
-
-1. **Fork** deste repositório para a sua conta.  
-2. **Clone** o fork localmente.  
-3. Crie uma **branch** com seu nome:  
-   ```bash
-   git checkout -b avaliacao-final-seu-nome
-   ```
-4. Implemente as funções nos arquivos `tree_logic.py` e `graph_logic.py`.  
-5. Rode localmente. Adicione e faça commit:
-   ```bash
-   git add arvore/tree_logic.py grafo/graph_logic.py
-   git commit -m "feat: implementa navigate_tree e connected (Avaliação Final)"
-   git push origin avaliacao-final-seu-nome
-   ```
-6. Abra um **Pull Request** para o repositório original com o título:
-   > `Avaliação Final – Seu Nome Completo`
-
-### Corpo do PR (obrigatório)
-- O que foi implementado (resumo).  
-- Dificuldades e como solucionou.  
-- Onde/como a IA ajudou e o que você entendeu.  
-- Prints da execução (opcional, mas recomendado).
-
-> **Somente PRs que modificarem exclusivamente os arquivos indicados serão aceitos.**
+### Exemplos de prompts úteis
+- “Explique passo a passo como o código percorre uma árvore binária.”  
+- “Por que uma lista pode substituir um deque no percurso BFS?”  
+- “Me ajude a entender a diferença entre arestas direcionadas e não direcionadas.”  
+- “Verifique se há erro lógico na função que lê as conexões do grafo.”  
+- “Como posso comentar melhor meu código para que outro programador entenda a intenção?”  
 
 ---
 
-## 🗂️ Entrega acadêmica no Teams (obrigatória)
+## 🧾 Entregáveis e Registro da Avaliação
 
-Anexe um **PDF** contendo:
-- Nome e matrícula;
-- Link direto do seu PR;
-- Texto do seu Relato de Aprendizagem;
-- Capturas de tela dos programas em execução.
+Esta atividade envolve **etapas integradas**, simulando o processo real de trabalho em equipe e documentação técnica.
 
-> A nota só será registrada se **GitHub (PR)** e **Teams (PDF)** forem entregues.
+1. **Implementação de Código (5 pontos)**  
+   - Corrigir e testar os códigos de **grafo** e **árvore binária**.  
+   - Realizar **commit individual** com mensagem descritiva.  
+   - Criar um **Pull Request (PR)** com o título:  
+     `Avaliação - Nome do Aluno - RA`.
 
----
+2. **Relato de Aprendizagem (3 pontos)**  
+   - Inserir no corpo do PR uma explicação contendo:  
+     - o raciocínio seguido;  
+     - eventuais dúvidas e decisões tomadas;  
+     - descrição do uso (ou não) de IA e o que foi aprendido.  
 
-## 🧮 Avaliação (0–10 pontos)
+3. **Registro no Microsoft Teams (2 pontos)**  
+   - Fazer upload do **link do PR** ou **print da tela do PR aprovado**.  
+   - Esse registro é **obrigatório para lançamento da nota**.
 
-- **Árvore (5,0 pts):** navegação correta, tratamento de erros, clareza do código.  
-- **Grafo (4,0 pts):** busca de conectividade correta usando listas, tratamento de erros.  
-- **Relato (1,0 pt):** clareza, reflexão crítica e ética no uso de IA.
-
----
-
-## ❓FAQ rápido
-
-**Posso usar `deque`?** Não. Nesta atividade, use listas (`list.pop(0)` é suficiente para os grafos propostos).  
-**Posso alterar as UIs?** Não. Elas estão “travadas” de propósito.  
-**Posso trabalhar em dupla?** A entrega é **individual** por PR.  
-**Dica:** comente seu código como se estivesse ajudando um colega.
+> 💬 *Observação:* Alunos que não concluírem o PR até o prazo terão 2 pontos reduzidos na média final, correspondentes à ausência de entrega formal.
 
 ---
 
-## 📜 Licença
+## 🧠 Estrutura de Pontuação (Resumo)
 
-Sugerimos **MIT License** para permitir livre uso educacional. Consulte o arquivo `LICENSE`.
+| Critério                          | Pontos | Descrição                                                                 |
+|----------------------------------|--------|---------------------------------------------------------------------------|
+| Implementação e correção do código | 5,0   | Estrutura funcional, legibilidade e execução correta                      |
+| Relato reflexivo no PR             | 3,0   | Clareza na explicação, uso ético da IA e raciocínio lógico                |
+| Registro no Teams                  | 2,0   | Evidência de entrega e conformidade com o fluxo institucional             |
+| **Total Máximo**                   | **10,0** | Média mínima para aprovação: **5,0**                                     |
+
+---
+
+## 📤 Entrega
+1. Faça o **fork** deste repositório.  
+2. Trabalhe em seu **fork pessoal**, fazendo commits progressivos.  
+3. Ao concluir, envie um **Pull Request (PR)** para este repositório original.  
+4. Poste o **link do PR** (ou print) no Teams, conforme instruções.  
+
+---
+
+## 📚 Dicas Finais
+- Priorize **clareza e comentários no código**.  
+- Prefira **listas simples** ao invés de estruturas complexas (como `deque`), para garantir compatibilidade.  
+- Teste em máquinas modestas — o código deve rodar bem em **Windows** com Python 3.10+.  
+- Lembre-se: o objetivo é **mostrar que você entendeu o processo**, não apenas entregar um código que “roda”.
+
+---
+
+## 👨‍🏫 Professor Responsável
+**Prof. Breno Abreu**  
+Curso de **Análise e Desenvolvimento de Sistemas**  
+Centro Universitário UNIPLAN  
