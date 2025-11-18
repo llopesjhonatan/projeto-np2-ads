@@ -17,16 +17,28 @@ def is_leaf(node):
 def navigate_tree(node, answers):
     """
     Percorre a árvore a partir de 'node' seguindo a sequência de respostas (lista de strings).
-    Cada resposta deve ser 'sim' ou 'não' (aceite 'nao' como 'não').
     Retorna a decisão final (string) quando alcançar uma folha.
-    Se a sequência terminar antes de chegar a uma folha, levante ValueError com dica.
-    Se alguma resposta for inválida, levante ValueError com mensagem clara.
-    >>> # Exemplo (não-executável aqui): navigate_tree(root, ["sim", "não"]) -> "É um pardal/pássaro diurno"
     """
-    # TODO: implemente aqui. Sugestão:
-    # - Enquanto o nó atual não for folha:
-    #     - Se não houver mais respostas, levante ValueError("Faltam respostas para concluir a decisão.")
-    #     - Pegue a próxima resposta, normalize para minúsculas, trate 'nao' como 'não'.
-    #     - Se "sim": vá para node.yes; se "não": vá para node.no; senão levante ValueError("Resposta inválida: ...")
-    # - Ao chegar numa folha, retorne node.question (a decisão final).
-    raise NotImplementedError("Implemente a função navigate_tree.")
+    # Cria uma cópia das respostas para não modificar a original
+    respostas_pendentes = answers.copy()
+    
+    # Enquanto o nó atual não for folha:
+    while not node.is_leaf():
+        if not respostas_pendentes:
+            raise ValueError("Faltam respostas para concluir a decisão.")
+        
+        # Pega a próxima resposta e normaliza
+        proxima_resposta = respostas_pendentes.pop(0).lower().strip()
+        
+        # Trata 'nao' como 'não'
+        if proxima_resposta == 'nao':
+            proxima_resposta = 'não'
+            
+        # Navega com base na resposta
+        if proxima_resposta == 'sim':
+            node = node.yes
+        elif proxima_resposta == 'não':
+            node = node.no
+        else:
+            # Resposta inválida
+            raise ValueError(f"Resposta inválida: '{proxima_resposta}'. Esperado 'sim' ou 'não'.")("Implemente a função navigate_tree.")
